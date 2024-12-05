@@ -5,14 +5,14 @@
 Summary:	Adaptive Entropy Coding library
 Summary(pl.UTF-8):	Biblioteka Adaptive Entropy Coding
 Name:		libaec
-Version:	0.3.2
+Version:	1.1.3
 Release:	1
 License:	BSD
 Group:		Libraries
-#Source0Download: https://www.dkrz.de/redmine/projects/aec/wiki/Downloads
-Source0:	https://www.dkrz.de/redmine/attachments/download/453/%{name}-%{version}.tar.gz
-# Source0-md5:	19c1211935d82d8b0bf581329634a6d7
-URL:		https://www.dkrz.de/redmine/projects/aec/wiki
+#Source0Download: https://gitlab.dkrz.de/k202009/libaec/-/releases
+Source0:	https://gitlab.dkrz.de/-/project/117/uploads/dc5fc087b645866c14fa22320d91fb27/%{name}-%{version}.tar.gz
+# Source0-md5:	5df72a762cec7e9de1140d96e63153dc
+URL:		https://gitlab.dkrz.de/k202009/libaec
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -122,6 +122,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -Dp src/.libs/graec $RPM_BUILD_ROOT%{_bindir}/graec
+install -Dp src/graec.1 $RPM_BUILD_ROOT%{_mandir}/man1/graec.1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -133,10 +136,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README README.SZIP doc/license.txt
-%attr(755,root,root) %{_bindir}/aec
+%doc AUTHORS CHANGELOG.md LICENSE.txt README.md README.SZIP doc/patent.txt
+%attr(755,root,root) %{_bindir}/graec
 %attr(755,root,root) %{_libdir}/libaec.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libaec.so.0
+%{_mandir}/man1/graec.1*
 
 %files devel
 %defattr(644,root,root,755)
