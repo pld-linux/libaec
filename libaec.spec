@@ -5,13 +5,13 @@
 Summary:	Adaptive Entropy Coding library
 Summary(pl.UTF-8):	Biblioteka Adaptive Entropy Coding
 Name:		libaec
-Version:	1.1.3
+Version:	1.1.4
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://gitlab.dkrz.de/k202009/libaec/-/releases
-Source0:	https://gitlab.dkrz.de/-/project/117/uploads/dc5fc087b645866c14fa22320d91fb27/%{name}-%{version}.tar.gz
-# Source0-md5:	5df72a762cec7e9de1140d96e63153dc
+Source0:	https://gitlab.dkrz.de/-/project/117/uploads/d19a8ba56f9d578e4d8da96d01217f3e/%{name}-%{version}.tar.gz
+# Source0-md5:	1383112134c75bb10cebf0afd922a769
 URL:		https://gitlab.dkrz.de/k202009/libaec
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
